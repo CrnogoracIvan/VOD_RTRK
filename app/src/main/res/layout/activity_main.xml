@@ -47,7 +47,6 @@
                     android:layout_weight="2"
                     android:layout_marginBottom="10dp"
                     android:gravity="left"
-                    android:text="Movie title:"
                     android:textStyle="bold|italic"
                     android:textColor="@color/accent" />
             </LinearLayout>
@@ -80,7 +79,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="left"
-                    android:text="Actor names:"
                     android:textColor="@color/accent" />
             </LinearLayout>
 
