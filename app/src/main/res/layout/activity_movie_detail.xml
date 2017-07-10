@@ -1,9 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ivancrnogorac.vod_rtrk.activity.MovieDetailActivity">
+    tools:context="com.example.new_home.tvapptestrtrk.activity.MovieDetailsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_detail_image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/iv_details_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:alpha="0.2" />
+
+            <TextView
+                android:id="@+id/tv_details_movie_name"
+                android:layout_width="wrap_content"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/movie_name"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@color/primary"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/tv_details_description" />
+
+            <TextView
+                android:id="@+id/tv_details_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_details_movie_name"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/description"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_details_description"
+                android:layout_alignTop="@+id/tv_details_actor"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Actors:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_details_actor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_details_description"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/textView"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/actors"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btn_details_imdb"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_imdb_icon"
+                android:text="@string/imdb"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="20sp"
+                android:textColor="@color/accent"
+                android:textStyle="bold"
+                android:background="@color/primary_dark"
+                android:layout_above="@+id/btn_details_play"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="11dp" />
+
+            <Button
+                android:id="@+id/btn_details_play"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_play_trailer"
+                android:text="@string/play"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:textColor="@color/accent"
+                android:background="@color/primary_dark"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

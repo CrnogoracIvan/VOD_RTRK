@@ -14,10 +14,6 @@ import com.example.ivancrnogorac.vod_rtrk.R;
 import com.example.ivancrnogorac.vod_rtrk.adapter.ImageAdapter;
 import com.example.ivancrnogorac.vod_rtrk.model.MovieList;
 
-import org.w3c.dom.Text;
-
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -45,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     /**------------------------------------------------------*/
 
     /** String keys for Intent */
-
     public static final String IMAGE = "image";
     public static final String DESCRIPTION = "desc";
     public static final String BACKGROUND = "background";
@@ -56,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Integer moviesImages[] = {
-
             R.drawable.the_wolf_of_wall_street,
             R.drawable.rush,
             R.drawable.dark_knight_rises,
@@ -91,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 TextView movieTitle = (TextView)findViewById(R.id.movieTitle);
                 movieTitle.setText(MovieList.setupMovies().get(position).getMovie());
 
-                TextView movieDuration = (TextView)findViewById(R.id.movieDuration);
-                movieDuration.setText(MovieList.setupMovies().get(position).getMovie());
+                TextView movieActors = (TextView)findViewById(R.id.actorsName);
+                movieActors.setText(MovieList.setupMovies().get(position).getActors());
 
             }
         });

@@ -8,91 +8,81 @@
     <LinearLayout
         android:layout_width="576dp"
         android:layout_height="wrap_content"
+        android:background="@color/primary_light"
         android:orientation="horizontal">
 
 
         <LinearLayout
             android:id="@+id/leftSide"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content">
 
             <LinearLayout
-            android:id="@+id/firstLine"
+            android:id="@+id/firstTitleLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/txtMovieTitle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="@android:color/holo_green_light"
                 android:gravity="left"
                 android:text="Title:"
+                android:textStyle="bold|italic"
                 android:textColor="@android:color/white" />
 
-            <TextView
-                android:id="@+id/movieTitle"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@android:color/holo_blue_light"
-                android:gravity="left"
-                android:text="Movie title:"
-                android:textColor="@android:color/white" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/secondLine"
+                android:id="@+id/secondTitleLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
-                    android:id="@+id/txtMovieDuration"
+                    android:id="@+id/movieTitle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:background="@android:color/holo_green_light"
+                    android:layout_marginBottom="10dp"
                     android:gravity="left"
-                    android:text="Duration:"
-                    android:textColor="@android:color/white" />
+                    android:text="Movie title:"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/accent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/firstActorsLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
                 <TextView
-                    android:id="@+id/movieDuration"
+                    android:id="@+id/txtActorsName"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:background="@android:color/holo_blue_light"
                     android:gravity="left"
-                    android:text="Movie duration:"
+                    android:text="Actor names:"
+                    android:textStyle="bold|italic"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/thirdLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/secondActorsLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtMovieGenre"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@android:color/holo_green_light"
-                android:gravity="left"
-                android:text="Genre:"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:id="@+id/movieGenre"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@android:color/holo_blue_light"
-                android:gravity="left"
-                android:text="Movie genre:"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
+                <TextView
+                    android:id="@+id/actorsName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left"
+                    android:text="Actor names:"
+                    android:textColor="@color/accent" />
+            </LinearLayout>
 
 
     </LinearLayout>
@@ -104,14 +94,13 @@
 
             <GridView
                 android:id="@+id/gridView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:background="@android:color/holo_orange_dark"
                 android:gravity="center"
                 android:numColumns="auto_fit"
                 android:verticalSpacing="10dp"
-                android:textColor="@android:color/white" >
+                android:textColor="@android:color/white">
+            <!--android:layout_weight="5"-->>
             </GridView>
         </LinearLayout>
 

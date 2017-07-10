@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VOD_RTRK</string>
+    <string name="movie_name">Movie name</string>
+    <string name="description">Description</string>
+    <string name="actors">Actors</string>
+    <string name="imdb">IMDb details</string>
+    <string name="play">Play trailer</string>
 </resources>
