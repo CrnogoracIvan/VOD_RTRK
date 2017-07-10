@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.ivancrnogorac.vod_rtrk.R;
 import com.example.ivancrnogorac.vod_rtrk.adapter.ImageAdapter;
 import com.example.ivancrnogorac.vod_rtrk.model.MovieList;
+
+import org.w3c.dom.Text;
 
 import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
 
@@ -79,24 +82,39 @@ public class MainActivity extends AppCompatActivity {
         ImageAdapter imageAdapter = new ImageAdapter(MainActivity.this, moviesImages);
         gridView.setAdapter(imageAdapter);
 
-        /** This onItemClick ( Intent in OnItemClick ) will send positioned details about clicked movie.
-         This details will show on MovieDetailsActivity */
 
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(MainActivity.this, MovieDetailsActivity.class);
-//                intent.putExtra(IMAGE, MovieList.setupMovies().get(position).getImage());
-//                intent.putExtra(DESCRIPTION, MovieList.setupMovies().get(position).getDescription());
-//                intent.putExtra(BACKGROUND, MovieList.setupMovies().get(position).getBgImage());
-//                intent.putExtra(ACTOR, MovieList.setupMovies().get(position).getActors());
-//                intent.putExtra(MOVIE_NAME, MovieList.setupMovies().get(position).getMovie());
-//                intent.putExtra(VIDEO_TRAILER, MovieList.setupMovies().get(position).getVideoUrl());
-//                intent.putExtra(URL, MovieList.setupMovies().get(position).getUrl());
-//
-//                startActivity(intent);
-//            }
-//        });
+       /**----*/
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                TextView movieTitle = (TextView)findViewById(R.id.movieTitle);
+                movieTitle.setText(MovieList.setupMovies().get(position).getMovie());
+
+                TextView movieDuration = (TextView)findViewById(R.id.movieDuration);
+                movieDuration.setText(MovieList.setupMovies().get(position).getMovie());
+
+            }
+        });
+
+        /** This onLongItemClick ( Intent in OnLongItemClick ) will send positioned details about clicked movie.
+         This details will show on MovieDetailActivity */
+
+       gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+           @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+               Intent intent = new Intent(MainActivity.this, MovieDetailActivity.class);
+               intent.putExtra(IMAGE, MovieList.setupMovies().get(position).getImage());
+               intent.putExtra(DESCRIPTION, MovieList.setupMovies().get(position).getDescription());
+               intent.putExtra(BACKGROUND, MovieList.setupMovies().get(position).getBgImage());
+               intent.putExtra(ACTOR, MovieList.setupMovies().get(position).getActors());
+               intent.putExtra(MOVIE_NAME, MovieList.setupMovies().get(position).getMovie());
+               intent.putExtra(VIDEO_TRAILER, MovieList.setupMovies().get(position).getVideoUrl());
+               intent.putExtra(URL, MovieList.setupMovies().get(position).getUrl());
+
+               startActivity(intent);
+               return true;
+           }
+       });
     }
 }
