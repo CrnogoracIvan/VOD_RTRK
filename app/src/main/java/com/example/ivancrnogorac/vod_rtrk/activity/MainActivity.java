@@ -1,13 +1,11 @@
 package com.example.ivancrnogorac.vod_rtrk.activity;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ivancrnogorac.vod_rtrk.R;
@@ -20,25 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
-
-        /**-----5 seconds Splash Sceen---*/
-        ImageView logoImage = new ImageView(this);
-        logoImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        logoImage.setImageResource(R.drawable.rt_rk_logo);
-        setContentView(logoImage);
-        Handler h = new Handler();
-
-        int SPLASH_DISPLAY_LENGTH = 5000;
-        h.postDelayed(new Runnable() {
-            public void run() {
-                setContentView(R.layout.activity_main);
-                imgLoader();
-            }
-        }, SPLASH_DISPLAY_LENGTH);
+        setContentView(R.layout.activity_main);
+        imgLoader();
     }
-
-    /**------------------------------------------------------*/
 
     /** String keys for Intent */
     public static final String IMAGE = "image";
@@ -48,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String MOVIE_NAME = "movie_name";
     public static final String VIDEO_TRAILER = "video_trailer";
     public static final String URL = "movie_url";
-
 
     private Integer moviesImages[] = {
             R.drawable.the_wolf_of_wall_street,
@@ -68,16 +49,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.lets_be_cops
     };
 
-    /** imgLoader created to ensure showing proper images with GridView component.
-     This method provided click on chosen movie from MainActivity film list */
-
+    /** imgLoader created to ensure showing proper images with GridView component.*/
     private void imgLoader() {
         GridView gridView = (GridView) findViewById(R.id.gridView);
         ImageAdapter imageAdapter = new ImageAdapter(MainActivity.this, moviesImages);
         gridView.setAdapter(imageAdapter);
 
-
-       /**----*/
+        /** On item click uses to fill fields movie name and actors with proper info.*/
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -87,13 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView movieActors = (TextView)findViewById(R.id.actorsName);
                 movieActors.setText(MovieList.setupMovies().get(position).getActors());
-
             }
         });
 
-        /** This onLongItemClick ( Intent in OnLongItemClick ) will send positioned details about clicked movie.
-         This details will show on MovieDetailActivity */
-
+        /** This onLongItemClick  will send positioned details about clicked movie.
+         Details will show on MovieDetailActivity */
        gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
            @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.new_home.tvapptestrtrk.activity.MovieDetailsActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +25,7 @@
             <ImageView
                 android:id="@+id/iv_details_background"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:alpha="0.2" />
@@ -35,15 +33,15 @@
             <TextView
                 android:id="@+id/tv_details_movie_name"
                 android:layout_width="wrap_content"
-                android:gravity="left"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:hint="@string/movie_name"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:textColor="@color/primary"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/tv_details_description" />
+                android:layout_alignStart="@+id/tv_details_description"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:hint="@string/movie_name"
+                android:textColor="@color/primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_details_description"
@@ -56,7 +54,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/description"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="normal" />
 
             <TextView
@@ -65,54 +63,53 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/tv_details_description"
                 android:layout_alignTop="@+id/tv_details_actor"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Actors:"
-                android:textSize="20sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_details_actor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_details_description"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginTop="32dp"
                 android:layout_toEndOf="@+id/textView"
                 android:fontFamily="sans-serif-condensed"
                 android:hint="@string/actors"
-                android:textSize="20sp"
+                android:textSize="10sp"
                 android:textStyle="normal" />
 
             <Button
                 android:id="@+id/btn_details_imdb"
-                android:layout_width="150sp"
+                android:layout_width="120sp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@drawable/ic_imdb_icon"
+                android:fontFamily="sans-serif-condensed"
                 android:text="@string/imdb"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"
                 android:textColor="@color/accent"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:background="@color/primary_dark"
-                android:layout_above="@+id/btn_details_play"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="11dp" />
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/textView" />
 
             <Button
                 android:id="@+id/btn_details_play"
-                android:layout_width="150sp"
+                android:layout_width="120sp"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_play_trailer"
-                android:text="@string/play"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:fontFamily="sans-serif-condensed"
-                android:textStyle="bold"
-                android:textColor="@color/accent"
-                android:background="@color/primary_dark"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_button"
+                android:drawableStart="@drawable/ic_play_trailer"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/play"
+                android:textAllCaps="false"
+                android:textColor="@color/accent"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

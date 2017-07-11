@@ -5,10 +5,6 @@ import com.example.ivancrnogorac.vod_rtrk.model.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ivan Crnogorac on 7/9/2017.
- */
-
 public class MovieList {
 
     public static List<Movie> setupMovies() {
@@ -123,21 +119,21 @@ public class MovieList {
         };
 
         String actors[] = {
-                "Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey, Kyle Chandler",
-                "Chris Hemsworth, Daniel Brühl, Olivia Wilde, Alexandra Maria Lara, Pierfrancesco Favino",
-                "Christian Bale, Gary Oldman, Tom Hardy, Joseph Gordon-Levitt, Anne Hathaway, Marion Cotillard",
-                "Jay Baruchel, Cate Blanchett, Gerard Butler, Craig Ferguson, America Ferrera, Jonah Hill ",
+                "Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey",
+                "Chris Hemsworth, Daniel Brühl, Olivia Wilde, Alexandra Maria Lara",
+                "Christian Bale, Gary Oldman, Tom Hardy, Joseph Gordon-Levitt",
+                "Jay Baruchel, Cate Blanchett, Gerard Butler, Craig Ferguson",
                 "Sylvester Stallone, Jason Statham, Harrison Ford, Arnold Schwarzenegger, Mel Gibson, Wesley Snipes, Dolph Lundgren",
-                "Andrew Garfield, Emma Stone, Jamie Foxx, Dane DeHaan, Colm Feore, Felicity Jones",
-                "Jonah Hill, Channing Tatum, Peter Stormare, Wyatt Russell, Amber Stevens West, Jillian Bell",
-                "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel, Bradley Cooper, Lee Pace",
-                "Angelina Jolie, Elle Fanning, Sharlto Copley, Lesley Manville, Imelda Staunton",
-                "Tom Hanks, Tim Allen, Joan Cusack, Ned Beatty, Don Rickles, Michael Keaton",
-                "Steve Carell, Kristen Wiig, Benjamin Bratt, Miranda Cosgrove, Russell Brand",
-                "Michael Jordan, Wayne Knight, Theresa Randle, Manner Washington, Eric Gordon, Penny Bae Bridges",
-                "Aaron Taylor-Johnson, CJ Adams, Ken Watanabe, Bryan Cranston, Elizabeth Olsen, Carson Bolde",
-                "Daniel Radcliffe, Zoe Kazan, Megan Park, Megan Park, Mackenzie Davis, Rafe Spall",
-                "Jake Johnson, Damon Wayans Jr., Rob Riggle, Nina Dobrev, James D'Arcy, Keegan-Michael Key"
+                "Andrew Garfield, Emma Stone, Jamie Foxx, Dane DeHaan",
+                "Jonah Hill, Channing Tatum, Peter Stormare, Wyatt Russell",
+                "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel",
+                "Angelina Jolie, Elle Fanning, Sharlto Copley, Lesley Manville",
+                "Tom Hanks, Tim Allen, Joan Cusack, Ned Beatty, Don Rickles",
+                "Steve Carell, Kristen Wiig, Benjamin Bratt, Miranda Cosgrove",
+                "Michael Jordan, Wayne Knight, Theresa Randle, Manner Washington",
+                "Aaron Taylor-Johnson, CJ Adams, Ken Watanabe, Bryan Cranston",
+                "Daniel Radcliffe, Zoe Kazan, Megan Park, Megan Park",
+                "Jake Johnson, Damon Wayans Jr., Rob Riggle, Nina Dobrev"
         };
 
         list.add(buildMovieInfo(movies[0], moviesImages[0], moviesBackgroundImages[0], moviesTrailers[0], descriptions[0], actors[0], moviesUrls[0]));

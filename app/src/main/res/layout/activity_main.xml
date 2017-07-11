@@ -6,7 +6,7 @@
     tools:context="com.example.ivancrnogorac.vod_rtrk.activity.MainActivity">
 
     <LinearLayout
-        android:layout_width="576dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary_light"
         android:orientation="horizontal">

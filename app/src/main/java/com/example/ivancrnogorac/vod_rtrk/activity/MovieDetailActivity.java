@@ -14,6 +14,8 @@ import com.example.ivancrnogorac.vod_rtrk.R;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
+    public static final String MOVIE_KEY = "video";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +48,10 @@ public class MovieDetailActivity extends AppCompatActivity {
         TextView myActor = (TextView) findViewById(R.id.tv_details_actor);
         myActor.setText(actor);
 
-        /** Click on Imdb button show details about selected movie in built-in browser.
-         After launching browser, details are shown shows IMDb search result. */
+        /** Click on Imdb button show details about selected movie in internet browser.*/
 
-        Button imdb = (Button) findViewById(R.id.btn_details_imdb);
-        imdb.setOnClickListener(new View.OnClickListener() {
+        Button myImdb = (Button) findViewById(R.id.btn_details_imdb);
+        myImdb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uri = Uri.parse(url);
@@ -59,17 +60,17 @@ public class MovieDetailActivity extends AppCompatActivity {
             }
         });
 
-        /** Click on myPlay button will open MoviePlayerActivity and show trailer for selected movie */
+        /** Click on Video button opens VideoPlayerActivity and plays video trailer for selected movie*/
 
-//        Button myPlay = (Button) findViewById(R.id.btn_details_play);
-//        myPlay.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(MovieDetailsActivity.this, MoviePlayerActivity.class);
-//                intent1.putExtra(VIDEO_KEY, trailer);
-//                startActivity(intent1);
-//            }
-//        });
+        Button myPlay = (Button) findViewById(R.id.btn_details_play);
+        myPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MovieDetailActivity.this, VideoPlayerActivity.class);
+                intent1.putExtra(MOVIE_KEY, trailer);
+                startActivity(intent1);
+            }
+        });
     }
 
 

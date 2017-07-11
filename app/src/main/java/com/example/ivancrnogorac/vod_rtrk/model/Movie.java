@@ -1,11 +1,5 @@
 package com.example.ivancrnogorac.vod_rtrk.model;
 
-import java.io.Serializable;
-
-/**
- * Created by Ivan Crnogorac on 7/9/2017.
- */
-
 public class Movie {
 
     private String movie;
