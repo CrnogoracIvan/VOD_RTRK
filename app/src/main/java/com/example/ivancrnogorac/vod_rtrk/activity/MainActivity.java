@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /** String keys for Intent */
-    public static final String IMAGE = "image";
-    public static final String DESCRIPTION = "desc";
-    public static final String BACKGROUND = "background";
-    public static final String ACTOR = "actor";
+    public static final String MOVIE_IMAGE = "image";
+    public static final String MOVIE_DESCRIPTION = "desc";
+    public static final String MOVIE_BACKGROUND = "background";
+    public static final String MOVIE_ACTOR = "actor";
     public static final String MOVIE_NAME = "movie_name";
-    public static final String VIDEO_TRAILER = "video_trailer";
-    public static final String URL = "movie_url";
+    public static final String MOVIE_VIDEO_TRAILER = "video_trailer";
+    public static final String MOVIE_URL = "movie_url";
 
     private Integer moviesImages[] = {
             R.drawable.the_wolf_of_wall_street,
@@ -74,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
            @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                Intent intent = new Intent(MainActivity.this, MovieDetailActivity.class);
-               intent.putExtra(IMAGE, MovieList.setupMovies().get(position).getImage());
-               intent.putExtra(DESCRIPTION, MovieList.setupMovies().get(position).getDescription());
-               intent.putExtra(BACKGROUND, MovieList.setupMovies().get(position).getBgImage());
-               intent.putExtra(ACTOR, MovieList.setupMovies().get(position).getActors());
+               intent.putExtra(MOVIE_IMAGE, MovieList.setupMovies().get(position).getImage());
+               intent.putExtra(MOVIE_DESCRIPTION, MovieList.setupMovies().get(position).getDescription());
+               intent.putExtra(MOVIE_BACKGROUND, MovieList.setupMovies().get(position).getBgImage());
+               intent.putExtra(MOVIE_ACTOR, MovieList.setupMovies().get(position).getActors());
                intent.putExtra(MOVIE_NAME, MovieList.setupMovies().get(position).getMovie());
-               intent.putExtra(VIDEO_TRAILER, MovieList.setupMovies().get(position).getVideoUrl());
-               intent.putExtra(URL, MovieList.setupMovies().get(position).getUrl());
+               intent.putExtra(MOVIE_VIDEO_TRAILER, MovieList.setupMovies().get(position).getVideoUrl());
+               intent.putExtra(MOVIE_URL, MovieList.setupMovies().get(position).getUrl());
 
                startActivity(intent);
                return true;

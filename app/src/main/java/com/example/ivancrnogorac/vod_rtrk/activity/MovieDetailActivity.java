@@ -21,19 +21,14 @@ public class MovieDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
-
         Intent intent = getIntent();
 
-        String image = intent.getStringExtra(MainActivity.IMAGE);
-        String description = intent.getStringExtra(MainActivity.DESCRIPTION);
-        String background = intent.getStringExtra(MainActivity.BACKGROUND);
-        String actor = intent.getStringExtra(MainActivity.ACTOR);
+        String description = intent.getStringExtra(MainActivity.MOVIE_DESCRIPTION);
+        String background = intent.getStringExtra(MainActivity.MOVIE_BACKGROUND);
+        String actor = intent.getStringExtra(MainActivity.MOVIE_ACTOR);
         String movie = intent.getStringExtra(MainActivity.MOVIE_NAME);
-        final String trailer = intent.getStringExtra(MainActivity.VIDEO_TRAILER);
-        final String url = intent.getStringExtra(MainActivity.URL);
-
-        ImageView myImage = (ImageView) findViewById(R.id.iv_detail_image);
-        Glide.with(this).load(image).into(myImage);
+        final String trailer = intent.getStringExtra(MainActivity.MOVIE_VIDEO_TRAILER);
+        final String url = intent.getStringExtra(MainActivity.MOVIE_URL);
 
         ImageView myBackground = (ImageView) findViewById(R.id.iv_details_background);
         myBackground.getMaxHeight();
@@ -48,7 +43,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         TextView myActor = (TextView) findViewById(R.id.tv_details_actor);
         myActor.setText(actor);
 
-        /** Click on Imdb button show details about selected movie in internet browser.*/
+        /** Click on Imdb button show details about selected movie in web browser.*/
 
         Button myImdb = (Button) findViewById(R.id.btn_details_imdb);
         myImdb.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +67,4 @@ public class MovieDetailActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
